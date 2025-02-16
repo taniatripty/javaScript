@@ -121,3 +121,6 @@ for (let i = 0; i < str7.length; i++) {
 }
 
 console.log(updatedStr); // Output: "Eyample teyt with y and Y."
+const d=new Date('2025-02-14');
+let c=d.getMonth();
+console.log(c+1);
