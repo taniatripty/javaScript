@@ -491,4 +491,219 @@ function totalsalary(employees){
     return totalSalary;
 
 }
-console.log(totalsalary(employees)/12)
+console.log(totalsalary(employees)/12);
+
+function remainingmoney(taka){
+    const fish=200;
+    const veg=100;
+    const cilli=10
+     let total=fish+veg+cilli;
+     let remaining=taka-total;
+     return remaining;
+    
+}
+console.log(remainingmoney(500));
+
+const list=['hena','halima','hasina','afrin','min',  'habiba','aklima','hasina']
+
+function checkname(list){
+    let namelist=[];
+    for(let i=0;i<list.length;i++){
+        const name=list[i];
+        if(name.includes('h')){
+            namelist.push(name);
+
+        }
+    }
+    return namelist;
+}
+
+console.log(checkname(list));
+
+
+
+const objhena={
+    name:'hena', age:22, homedistrict:'rangpur'
+}
+   
+const objhero={
+    name:'hero', age:32, homedistrict:'rangpur'
+}
+function checkhomedistrict(objhena,objhero){
+
+    if(typeof objhero==='object' && typeof objhena==='object') {
+        if(objhena.homedistrict===objhero.homedistrict){
+            let result='done';
+            return result;
+        }
+        else{
+            let result='no'
+            return result
+        }
+
+    }
+    else{
+        let result='invaild input';
+        return result;
+
+    }
+    
+
+}
+
+console.log(checkhomedistrict(objhero,objhena));
+
+
+/// find total numbers of relatives
+
+
+const relatives = [
+    { name: "Alice", member: 1 },
+    { name: "Bob", member: 2 },
+    { name: "Charlie", member: 3 },
+    { name: "Alice", member: 1 },
+    { name: "David", member: 4 },
+    { name: "Eve", member: 5 },
+    { name: "Bob", member: 2 },
+    { name: "Frank", member: 6 },
+    { name: "Grace", member: 7 },
+] 
+
+function findTotalNumbersOfRelatives(relatives){
+    let total=0;
+    for(let i=0;i<relatives.length;i++){
+        let relative=relatives[i];
+        total +=relative.member
+    }
+    return total;
+}
+
+console.log( 'total numbers of relatives is :',findTotalNumbersOfRelatives(relatives))
+
+
+//remove duplicate member
+
+
+//b10a2
+
+function sendnotification(email){
+
+    if(!email.includes('@')){
+        return 'invalid mail'
+    }
+ let split=email.split('@');
+ // 
+ let username=split[0];
+ let domainnmae=split[1]; 
+ let notification=username + 'send you an eamil from ' + domainnmae 
+ return notification;
+}
+let email='tania.tripty@gamil.com';
+console.log(sendnotification(email));
+
+//b10a3
+
+function checkDigitInName(name){
+
+    if(typeof name!=='string'){
+        return 'invalid input'
+
+    }
+ let split=name.split('');
+ //console.log(split);
+ let result=false;
+ for(let i=0;i<split.length;i++){
+    const element=split[i];
+    if(!isNaN(element) && element!==" "){
+        result= true;
+        break
+    }
+    
+ }
+ return result;
+}
+let name='tania';
+console.log(checkDigitInName(name));
+
+//b10a4
+
+function calculateFinalScore(obj){
+    if(typeof obj!=='object'){
+        return 'invalid input'
+    }
+     let score=obj.testScore+obj.schoolGrade;
+     let total=0;
+     if(obj.isFFamily===true){
+        total +=20;
+     }
+     let finalScore=score+total;
+     if(finalScore>=80){
+        return 'pass';
+     }
+     else{
+        return 'fail';
+     }
+
+}
+
+const obj={
+
+name:'tania',  testScore:40, schoolGrade:25, isFFamily:true}
+
+console.log(calculateFinalScore(obj));
+
+//b10a5
+
+
+function waitingTime(array,number){
+if(!Array.isArray(array) || typeof number !=='number'){
+    return 'invalid input'
+}
+    let sum=0;
+    let avg;
+ for(let i=0;i<array.length;i++){
+    const element=array[i];
+    sum +=element;
+
+ }
+ avg=Math.round(sum/array.length);
+ 
+ let remaing=number-1-array.length;
+ let waitingtime= remaing*avg;
+ return waitingtime;
+}
+
+
+console.log(waitingTime([13, 2, 6, 7, 10], '7'))
+
+function removeDuplicate(relatives2) {
+    let unique = [];
+
+    for (let i = 0; i < relatives2.length; i++) {
+        let isUnique = true;
+        for (let j = 0; j < unique.length; j++) {
+            if (relatives2[i].name === unique[j].name && relatives2[i].member === unique[j].member) {
+                isUnique = false;
+                break;
+            }
+        }
+        if (isUnique) {
+            unique.push(relatives2[i]);
+        }
+    }
+    return unique;
+}
+
+const relatives2 = [
+    { name: "Alice", member: 1 },
+    { name: "Bob", member: 2 },
+    { name: "Charlie", member: 3 },
+    { name: "Alice", member: 1 },
+    { name: "David", member: 4 },
+    { name: "Eve", member: 5 },
+    { name: "Bob", member: 2 },
+    { name: "Frank", member: 6 },
+    { name: "Grace", member: 7 },
+];
+
+console.log(removeDuplicate(relatives2));
